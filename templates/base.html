@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.name }}'s watchlist</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    {% endblock %}
+</head>
+<body>
+
+<img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
+<h2>{{ user.name }}'s watchlist</h2>
+<!-- 使用length过滤器获取movies变量的长度 -->
+
+<nav>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+    </ul>
+</nav>
+
+{% block content %}{% endblock %}
+
+
+<footer>
+    <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
+</footer>
+
+
+</body>
+</html>
